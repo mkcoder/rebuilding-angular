@@ -1,3 +1,22 @@
+use 'strict';
+
+// IOC.js
+var IOC = (function () {
+    var arrayList = (fucntion () {
+                     
+                     var dependencyDict = {};
+                     
+                     function add(key, value) {
+                        dependencyDict[key] = value;
+                     }
+                     
+                     })();
+    
+    
+})();
+
+
+
 var JSIOC = function () {
   var dep = {
     add: function(key, value) {
@@ -42,9 +61,11 @@ var register = function (r, fname, ioc) {
  // register our own services
  ioc.registerService('$scope', function () {
     console.log('I am a $scope service.');
+     return '$scope';
  }); 
  ioc.registerService('$http', function () {
     console.log('I am a $http service.');
+     return '$http';
  });
 // get a list of requested deps in the function r
  var newR = ioc.annotate(r);
